@@ -1,4 +1,5 @@
 import { getAnimeDetails } from "@/app/libs/api.libs";
+import VideoPlayer from "@/components/Utilities/VideoPlayer";
 import Image from "next/image";
 
 const AnimeDetails = async ({ params }) => {
@@ -37,6 +38,9 @@ const AnimeDetails = async ({ params }) => {
         </div>
         <div className="sm:w-2/3 w-full p-4 flex sm:items-center">
           <p className="text-justify">{animeDetails.data.synopsis}</p>
+        </div>
+        <div>
+          <VideoPlayer youtubeId={animeDetails.data.trailer.youtube_id} />
         </div>
       </div>
     </div>
